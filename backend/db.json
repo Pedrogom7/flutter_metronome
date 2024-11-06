@@ -1,0 +1,99 @@
+{
+  "songs": [
+    {
+      "id": "1",
+      "title": "Amazing Grace",
+      "artist": "John Newton",
+      "tempo": 120,
+      "timeSignature": "4/4"
+    },
+    {
+      "id": "2",
+      "title": "How Great Thou Art",
+      "artist": "Carl Boberg",
+      "tempo": 90,
+      "timeSignature": "3/4"
+    },
+    {
+      "id": "3",
+      "title": "Here I Am to Worship",
+      "artist": "Tim Hughes",
+      "tempo": 76,
+      "timeSignature": "4/4"
+    },
+    {
+      "id": "4",
+      "title": "Shout to the Lord",
+      "artist": "Darlene Zschech",
+      "tempo": 80,
+      "timeSignature": "4/4"
+    },
+    {
+      "id": "5",
+      "title": "Blessed Assurance",
+      "artist": "Fanny Crosby",
+      "tempo": 85,
+      "timeSignature": "3/4"
+    },
+    {
+      "id": "6",
+      "title": "Great Is Thy Faithfulness",
+      "artist": "Thomas Chisholm",
+      "tempo": 95,
+      "timeSignature": "4/4"
+    },
+    {
+      "id": "2024-11-04 21:58:14.428",
+      "title": "The Blessing",
+      "artist": "Elevation Worship",
+      "tempo": 90,
+      "timeSignature": "4/4"
+    }
+  ],
+  "playlists": [
+    {
+      "id": "1",
+      "name": "Gospel Favorites",
+      "description": "A playlist of inspiring gospel songs.",
+      "songs": [
+        {
+          "id": "1",
+          "title": "Amazing Grace",
+          "artist": "John Newton",
+          "tempo": 120,
+          "timeSignature": "4/4"
+        },
+        {
+          "id": "2",
+          "title": "How Great Thou Art",
+          "artist": "Carl Boberg",
+          "tempo": 90,
+          "timeSignature": "3/4"
+        }
+      ],
+      "createdAt": "2024-10-29T10:00:00Z"
+    },
+    {
+      "id": "2024-11-05 22:11:54.577",
+      "name": "Musicas 2",
+      "description": "A playlist of songs",
+      "songs": [
+        {
+          "id": "2024-11-05 22:12:21.638",
+          "title": "Baby",
+          "artist": "Justin Biber",
+          "tempo": 120,
+          "timeSignature": "4/4"
+        },
+        {
+          "id": "2024-11-05 22:12:49.630",
+          "title": "Bad",
+          "artist": "Michael Jackson",
+          "tempo": 120,
+          "timeSignature": "6/8"
+        }
+      ],
+      "createdAt": "2024-11-05T22:11:54.578"
+    }
+  ]
+}
