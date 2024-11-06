@@ -154,10 +154,6 @@ class _SongsScreenState extends State<SongsScreen> {
                   song: songs[index],
                   onEdit: () => _editSong(songs[index]),
                   onDelete: () => _deleteSong(songs[index]),
-                  onTap: () {
-                    Navigator.pop(
-                        context, songs[index].tempo); // Pass tempo back
-                  },
                 );
               },
             ),

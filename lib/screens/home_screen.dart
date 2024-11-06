@@ -17,16 +17,11 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  void _navigateToSongsScreen(BuildContext context) async {
-    final selectedTempo = await Navigator.push(
+  void _navigateToSongsScreen(BuildContext context) {
+    Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => SongsScreen()),
     );
-
-    // Check if selectedTempo is not null and update the metronome tempo
-    if (selectedTempo != null) {
-      _handleTempoChange(selectedTempo); // Update the metronome tempo
-    }
   }
 
   @override
@@ -37,8 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             icon: Icon(Icons.music_note),
-            onPressed: () =>
-                _navigateToSongsScreen(context), // Navigate to SongsScreen
+            onPressed: () => _navigateToSongsScreen(context),
           ),
         ],
       ),
