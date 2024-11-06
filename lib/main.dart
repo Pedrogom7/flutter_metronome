@@ -8,7 +8,20 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isDarkMode = false;
+
+  void _toggleTheme(bool isDark) {
+    setState(() {
+      _isDarkMode = isDark;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,25 +29,43 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        brightness: _isDarkMode ? Brightness.dark : Brightness.light,
       ),
-      home: MainScreen(),
+      home: MainScreen(
+        toggleTheme: _toggleTheme,
+        isDarkMode: _isDarkMode,
+      ),
     );
   }
 }
 
 class MainScreen extends StatefulWidget {
+  final Function(bool) toggleTheme;
+  final bool isDarkMode;
+
+  MainScreen({required this.toggleTheme, required this.isDarkMode});
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
-  static List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    SongsScreen(),
-    PlaylistsScreen(),
-    SettingsScreen(),
-  ];
+  late List<Widget> _widgetOptions;
+
+  @override
+  void initState() {
+    super.initState();
+    _widgetOptions = [
+      HomeScreen(),
+      SongsScreen(),
+      PlaylistsScreen(),
+      SettingsScreen(
+        toggleTheme: widget.toggleTheme,
+        isDarkMode: widget.isDarkMode,
+      ),
+    ];
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -47,8 +78,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Music App'),
-        automaticallyImplyLeading:
-            false, // This removes the hamburger menu icon
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
